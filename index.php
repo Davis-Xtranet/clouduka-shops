@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -48,7 +49,7 @@
 	
 </head>
 <body class="js">
-	
+
 	<!-- Preloader -->
 	<div class="preloader">
 		<div class="preloader-inner">
@@ -72,7 +73,7 @@
 						<div class="top-left">
 							<ul class="list-main">
 								<li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-								<li><i class="ti-email"></i> support@shophub.com</li>
+								<li><i class="ti-email"></i> clouduka@gmail.com</li>
 							</ul>
 						</div>
 						<!--/ End Top Left -->
@@ -107,10 +108,48 @@
 							<div  class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
 							<!-- Search Form -->
 							<div class="search-top">
-								<form class="search-form" method="GET">
+								<form class="search-form" method="get">
+								
 									<input type="text" id="search" placeholder="Search here.." name="search">
-									<div id="display"></div>
-									<button value="search" type="submit"><i class="ti-search"></i></button>
+									
+									<input name="submit" value="Search" type="submit"><i class="ti-search"></i></input>
+									</br>
+									<div id="display">
+									<?php
+$con = MySQLi_connect(
+	"localhost", //Server host name.
+	"root", //Database username.
+	"", //Database password.
+	"autocomplete" //Database name or anything you would like to call it.
+ );
+
+ if(isset($_POST["submit"])){
+	 $str = $_POST["search"];
+	 $sth = $con->prepare("SELECT * FROM `search` WHERE Name = `$str`");
+
+	 $sth->setFetchMode(PDO:: FETCH_OBJ);
+	 $sth -> ecxecute();
+
+	 if($row = $sth->fetch())
+	 {
+		 ?>
+		 <br>
+		 <table>
+		 <tr>
+		 <th>Name</th>
+		 </tr>
+		 <tr>
+		 <td><?php echo $row->Name; ?></td>
+		 </table>
+		 <?php
+	 }
+	 
+	 else{
+		 echo "Namedoes not exist";
+	 }
+ }
+?>
+									</div>
 								</form>
 							</div>
 							<!--/ End Search Form -->
@@ -251,10 +290,10 @@
 							<div class="row">
 								<div class="col-lg-7 col-12">
 									<div class="hero-text">
-										<h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-										<p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
+										<h1><span>UP TO 50% OFF </span>Imagine Lighting</h1>
+										<p>Get the most out of your lighting. Let your lifestyle break the usual boredom <br> Shop with us today <br> <u>Need help?</u></p>
 										<div class="button">
-											<a href="#" class="btn">Shop Now!</a>
+											<a target="_blank" href="https://imaginelighting.clouduka.co.ke/" class="btn">Shop Now!</a>
 										</div>
 									</div>
 								</div>
@@ -275,11 +314,11 @@
 				<!-- Single Banner  -->
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img style="height=10%;" src="./images/newc.webp" alt="#">
 						<div class="content">
-							<p>Man's Collectons</p>
-							<h3>Summer travel <br> collection</h3>
-							<a href="#">Discover Now</a>
+							<p>Gold Ring</p>
+							<h3>Guide Glam <br> Ksh 300</h3>
+							<a href="https://guideglam.clouduka.co.ke/product/gold-ring/69">Discover Now</a>
 						</div>
 					</div>
 				</div>
@@ -287,11 +326,11 @@
 				<!-- Single Banner  -->
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img src="./images/neck.webp" alt="#">
 						<div class="content">
-							<p>Bag Collectons</p>
-							<h3>Awesome Bag <br> 2020</h3>
-							<a href="#">Shop Now</a>
+							<p>Africa Necklace</p>
+							<h3>Guide Glam <br> Ksh 1,000</h3>
+							<a href="https://guideglam.clouduka.co.ke/product/africa-necklace/63">Shop Now</a>
 						</div>
 					</div>
 				</div>
@@ -299,11 +338,11 @@
 				<!-- Single Banner  -->
 				<div class="col-lg-4 col-12">
 					<div class="single-banner tab-height">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img src="./images/gel.webp" alt="#">
 						<div class="content">
-							<p>Flash Sale</p>
-							<h3>Mid Season <br> Up to <span>40%</span> Off</h3>
-							<a href="#">Discover Now</a>
+							<p>Gel On</p>
+							<h3>Demo <br> Up to <span>Ksh 1,300</span></h3>
+							<a href="https://demo.clouduka.co.ke/product/gel-on/40">Discover Now</a>
 						</div>
 					</div>
 				</div>
@@ -329,9 +368,9 @@
 							<div class="nav-main">
 								<!-- Tab Nav -->
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Man</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Woman</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Kids</a></li>
+									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Beauty</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Kitchen</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Home accesories</a></li>
 									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessories</a></li>
 									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Essential</a></li>
 									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Prices</a></li>
@@ -346,9 +385,9 @@
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://tras.clouduka.co.ke/product/ear-ring/35">
+															<img class="default-img" src="./images/tras.webp" alt="#">
+															<img class="hover-img" src="./images/tras.webp" alt="#">
 														</a>
 														<div class="button-head">
 															<div class="product-action">
@@ -357,12 +396,12 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Women Hot Collection</a></h3>
+														<h3><a href="product-details.html">Brush</a></h3>
 														<div class="product-price">
 															<span>$29.00</span>
 														</div>
@@ -372,9 +411,9 @@
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://imaginelighting.clouduka.co.ke/product/dl8866-1000/44">
+															<img class="default-img" src="./images/light.webp" alt="#">
+															<img class="hover-img" src="./images/light.webp" alt="#">
 														</a>
 														<div class="button-head">
 															<div class="product-action">
@@ -383,7 +422,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -398,9 +437,9 @@
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://demo.clouduka.co.ke/product/bracelet/41">
+															<img class="default-img" src="./images/emarld.webp" alt="#">
+															<img class="hover-img" src="./images/emarld.webp" alt="#">
 														</a>
 														<div class="button-head">
 															<div class="product-action">
@@ -409,24 +448,24 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
+														<h3><a href="product-details.html">Emarld Ring Luxury Diamond</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>$1,300.00</span>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+											<div style="height: 20%;" class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://guideglam.clouduka.co.ke/product/gold-three-piece-necklace/71">
+															<img class="default-img" src="./images/three.webp" alt="#">
+															<img class="hover-img" src="./images/three.webp" alt="#">
 															<span class="new">New</span>
 														</a>
 														<div class="button-head">
@@ -436,7 +475,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -462,7 +501,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -489,7 +528,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -515,7 +554,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -542,7 +581,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -577,7 +616,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -603,7 +642,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -629,7 +668,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -656,7 +695,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -682,7 +721,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -709,7 +748,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -735,7 +774,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View productt</a>
 															</div>
 														</div>
 													</div>
@@ -762,7 +801,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View productt</a>
 															</div>
 														</div>
 													</div>
@@ -797,7 +836,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -823,7 +862,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -849,7 +888,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -876,7 +915,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -902,7 +941,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -929,7 +968,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -955,7 +994,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -982,7 +1021,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View productt</a>
 															</div>
 														</div>
 													</div>
@@ -1017,7 +1056,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1043,7 +1082,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1069,7 +1108,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1096,7 +1135,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1122,7 +1161,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1149,7 +1188,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1175,7 +1214,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1202,7 +1241,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1237,7 +1276,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1263,7 +1302,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1289,7 +1328,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1316,7 +1355,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1342,7 +1381,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1369,7 +1408,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1395,7 +1434,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1422,7 +1461,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1457,7 +1496,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1483,7 +1522,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1509,7 +1548,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1536,7 +1575,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1562,7 +1601,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1589,7 +1628,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1615,7 +1654,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1642,7 +1681,7 @@
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="#">View product</a>
 															</div>
 														</div>
 													</div>
@@ -1728,7 +1767,7 @@
 										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 									</div>
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="#">View product</a>
 									</div>
 								</div>
 							</div>
@@ -1755,7 +1794,7 @@
 										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 									</div>
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="#">View product</a>
 									</div>
 								</div>
                             </div>
@@ -1782,7 +1821,7 @@
 										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 									</div>
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="#">View product</a>
 									</div>
 								</div>
                             </div>
@@ -1808,7 +1847,7 @@
 										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 									</div>
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="#">View product</a>
 									</div>
 								</div>
                             </div>
@@ -2181,7 +2220,7 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="images/logo2.png" alt="#"></a>
+								<a href="index.html"><img src="images/apas.png" alt="#"></a>
 							</div>
 							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
 							<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
@@ -2298,3 +2337,4 @@
 	<script src="js/active.js"></script>
 </body>
 </html>
+
