@@ -100,7 +100,7 @@
 					<div class="col-lg-2 col-md-2 col-12">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.html"><img src="images/apa.png" alt="logo"></a>
+							<a href="index.html"><img src="images/apas.png" alt="logo"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form -->
@@ -162,9 +162,11 @@ $con = MySQLi_connect(
 							<div class="search-bar">
 								<select>
 									<option selected="selected">All Category</option>
-									<option>watch</option>
-									<option>mobile</option>
-									<option>kid’s item</option>
+									<option>Home Appliances</option>
+										<option>Kitchen</option>
+										<option>Clothing</option>
+										<option>Storage</option>
+										<option>Beauty</option>
 								</select>
 								<form>
 									<input name="search" placeholder="Search Products Here....." type="search">
@@ -184,7 +186,7 @@ $con = MySQLi_connect(
 			<div class="container">
 				<div class="cat-nav-head">
 					<div class="row">
-						<div class="col-lg-3">
+						<!-- <div class="col-lg-3">
 							<div class="all-category">
 								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
 								<ul class="main-category">
@@ -251,7 +253,7 @@ $con = MySQLi_connect(
 									<li><a href="#">denim </a></li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 						<div class="col-lg-9 col-12">
 							<div class="menu-area">
 								<!-- Main Menu -->
@@ -261,9 +263,16 @@ $con = MySQLi_connect(
 											<ul class="nav main-menu menu navbar-nav">
 													<li class="active"><a href="#">Home</a></li>
 													<li><a href="#">Products</a></li>												
-													<li><a href="#">Shops<span class="new">New</span></a>
+													<li><a href="#">Shops<i class="ti-angle-down"></i><span class="new">New</span></a>
+													<ul class="dropdown">
+															<li><a href="https://imaginelighting.clouduka.co.ke/">Imagine Lighting</a></li>
+															<li><a href="https://amareen.clouduka.co.ke/">Amareen</a></li>
+															<li><a href="https://guideglam.clouduka.co.ke/">Guide Glam</a></li>
+															<li><a href="https://demo.clouduka.co.ke/">Demo</a></li>
+														</ul>
 													</li>
 												<li><a href="contact.html">Contact Us</a></li>
+												<li><a href="#">How to shop on clouduka</a></li>
 												</ul>
 										</div>
 									</div>
@@ -326,11 +335,11 @@ $con = MySQLi_connect(
 				<!-- Single Banner  -->
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="./images/neck.webp" alt="#">
+						<img src="./images/neckv.webp" alt="#">
 						<div class="content">
-							<p>Africa Necklace</p>
-							<h3>Guide Glam <br> Ksh 1,000</h3>
-							<a href="https://guideglam.clouduka.co.ke/product/africa-necklace/63">Shop Now</a>
+							<p>Three Piece Necklace</p>
+							<h3>Guide Glam <br> Ksh 550</h3>
+							<a href="https://guideglam.clouduka.co.ke/product/three-piece-necklace/68">Shop Now</a>
 						</div>
 					</div>
 				</div>
@@ -353,7 +362,7 @@ $con = MySQLi_connect(
 	<!-- End Small Banner -->
 	
 	<!-- Start Product Area -->
-    <div class="product-area section">
+    <div class="product-area section" style="margin-top:-12%;">
             <div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -396,12 +405,12 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://tras.clouduka.co.ke/product/ear-ring/35">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Brush</a></h3>
+														<h3><a href="https://tras.clouduka.co.ke/product/ear-ring/35">Brush</a></h3>
 														<div class="product-price">
 															<span>$29.00</span>
 														</div>
@@ -422,12 +431,12 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://imaginelighting.clouduka.co.ke/product/dl8866-1000/44">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Pink Show</a></h3>
+														<h3><a href="https://imaginelighting.clouduka.co.ke/product/dl8866-1000/44">Awesome Pink Show</a></h3>
 														<div class="product-price">
 															<span>$29.00</span>
 														</div>
@@ -448,12 +457,12 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://demo.clouduka.co.ke/product/bracelet/41">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Emarld Ring Luxury Diamond</a></h3>
+														<h3><a href="https://demo.clouduka.co.ke/product/bracelet/41">Emarld Ring Luxury Diamond</a></h3>
 														<div class="product-price">
 															<span>$1,300.00</span>
 														</div>
@@ -475,12 +484,12 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://guideglam.clouduka.co.ke/product/gold-three-piece-necklace/71">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Women Pant Collectons</a></h3>
+														<h3><a href="https://guideglam.clouduka.co.ke/product/gold-three-piece-necklace/71">Women Pant Collectons</a></h3>
 														<div class="product-price">
 															<span>$29.00</span>
 														</div>
@@ -490,9 +499,9 @@ $con = MySQLi_connect(
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://amareen.clouduka.co.ke/product/egyptian-polo-towels/57">
+															<img class="default-img" src="./images/polo.webp" alt="#">
+															<img class="hover-img" src="./images/polo.webp" alt="#">
 														</a>
 														<div class="button-head">
 															<div class="product-action">
@@ -501,14 +510,14 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://amareen.clouduka.co.ke/product/egyptian-polo-towels/57">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
+														<h3><a href="https://amareen.clouduka.co.ke/product/egyptian-polo-towels/57l">Egyptian Polo Towels</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>Ksh 2,100</span>
 														</div>
 													</div>
 												</div>
@@ -516,9 +525,9 @@ $con = MySQLi_connect(
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://amareen.clouduka.co.ke/product/Throw-pillows/56">
+															<img class="default-img" src="./images/throw.webp" alt="#">
+															<img class="hover-img" src="./images/throw.webp" alt="#">
 															<span class="price-dec">30% Off</span>
 														</a>
 														<div class="button-head">
@@ -528,14 +537,14 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://amareen.clouduka.co.ke/product/Throw-pillows/56">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Cap For Women</a></h3>
+														<h3><a href="https://amareen.clouduka.co.ke/product/Throw-pillows/56">Throw Pillows</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>Ksh 600</span>
 														</div>
 													</div>
 												</div>
@@ -543,9 +552,9 @@ $con = MySQLi_connect(
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://amareen.clouduka.co.ke/product/fluffy-carpets/60">
+															<img class="default-img" src="./images/fluffy.webp" alt="#">
+															<img class="hover-img" src="./images/fluffy.webp" alt="#">
 														</a>
 														<div class="button-head">
 															<div class="product-action">
@@ -554,14 +563,14 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://amareen.clouduka.co.ke/product/fluffy-carpets/60">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Polo Dress For Women</a></h3>
+														<h3><a href="https://amareen.clouduka.co.ke/product/fluffy-carpets/60">Fluffy Carpets</a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>Ksh 2,300</span>
 														</div>
 													</div>
 												</div>
@@ -569,9 +578,9 @@ $con = MySQLi_connect(
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+														<a href="https://amareen.clouduka.co.ke/product/fancy-hand-towels/62">
+															<img class="default-img" src="./images/fancy.webp" alt="#">
+															<img class="hover-img" src="./images/fancy.webp" alt="#">
 															<span class="out-of-stock">Hot</span>
 														</a>
 														<div class="button-head">
@@ -581,15 +590,15 @@ $con = MySQLi_connect(
 																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
 															</div>
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">View product</a>
+																<a title="Add to cart" href="https://amareen.clouduka.co.ke/product/fancy-hand-towels/62">View product</a>
 															</div>
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
+														<h3><a href="https://amareen.clouduka.co.ke/product/fancy-hand-towels/62">Fancy Hand Towels</a></h3>
 														<div class="product-price">
-															<span class="old">$60.00</span>
-															<span>$50.00</span>
+															<!-- <span class="old">$60.00</span> -->
+															<span>Ksh 300</span>
 														</div>
 													</div>
 												</div>
@@ -1709,15 +1718,22 @@ $con = MySQLi_connect(
 	<!-- Start Midium Banner  -->
 	<section class="midium-banner">
 		<div class="container">
+		<div class="row">
+				<div class="col-12">
+					<div class="section-title">
+						<h2>Deals of the month</h2>
+					</div>
+				</div>
+            </div>
 			<div class="row">
 				<!-- Single Banner  -->
 				<div class="col-lg-6 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img src="./images/demo.jpg" alt="#">
 						<div class="content">
-							<p>Man's Collectons</p>
-							<h3>Man's items <br>Up to<span> 50%</span></h3>
-							<a href="#">Shop Now</a>
+							<p>Demo</p>
+							<h3>Flavored Gloss<br>Up to<span> 50%</span></h3>
+							<a href="https://demo.clouduka.co.ke/#">Shop Now</a>
 						</div>
 					</div>
 				</div>
@@ -1725,11 +1741,11 @@ $con = MySQLi_connect(
 				<!-- Single Banner  -->
 				<div class="col-lg-6 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img src="./images/africa.jpg" alt="#">
 						<div class="content">
-							<p>shoes women</p>
-							<h3>mid season <br> up to <span>70%</span></h3>
-							<a href="#" class="btn">Shop Now</a>
+							<p>Guide Glam</p>
+							<h3>Africa Gold <br> up to <span>70%</span></h3>
+							<a href="https://guideglam.clouduka.co.ke/" class="btn">Shop Now</a>
 						</div>
 					</div>
 				</div>
@@ -2066,57 +2082,6 @@ $con = MySQLi_connect(
 	</section>
 	<!-- End Shop Home List  -->
 	
-	<!-- Start Shop Blog  -->
-	<section class="shop-blog section">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="section-title">
-						<h2>From Our Blog</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July , 2020. Monday</p>
-							<a href="#" class="title">Sed adipiscing ornare.</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Man’s Fashion Winter Sale</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Women Fashion Festive</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Shop Blog  -->
 	
 	<!-- Start Shop Services Area -->
 	<section class="shop-services section home">
@@ -2222,8 +2187,7 @@ $con = MySQLi_connect(
 							<div class="logo">
 								<a href="index.html"><img src="images/apas.png" alt="#"></a>
 							</div>
-							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-							<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+							
 						</div>
 						<!-- End Single Widget -->
 					</div>
@@ -2233,9 +2197,9 @@ $con = MySQLi_connect(
 							<h4>Information</h4>
 							<ul>
 								<li><a href="#">About Us</a></li>
-								<li><a href="#">Faq</a></li>
+								<li><a href="#">FAQs</a></li>
 								<li><a href="#">Terms & Conditions</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
 								<li><a href="#">Help</a></li>
 							</ul>
 						</div>
@@ -2258,14 +2222,13 @@ $con = MySQLi_connect(
 					<div class="col-lg-3 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer social">
-							<h4>Get In Tuch</h4>
+							<h4>Make Money With ClouDuka</h4>
 							<!-- Single Widget -->
 							<div class="contact">
 								<ul>
-									<li>NO. 342 - London Oxford Street.</li>
-									<li>012 United Kingdom.</li>
-									<li>info@eshop.com</li>
-									<li>+032 3456 7890</li>
+									<li>Sell on ClouDuka</li>
+									<li>Become a ClouDuka Rider</li>
+									<li>Other Careers</li>	
 								</ul>
 							</div>
 							<!-- End Single Widget -->
@@ -2288,7 +2251,7 @@ $con = MySQLi_connect(
 					<div class="row">
 						<div class="col-lg-6 col-12">
 							<div class="left">
-								<p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a>  -  All Rights Reserved.</p>
+								<p>Copyright © 2020 <a href="https://clouduka.co.ke/index.html" target="_blank">Clouduka</a>  -  All Rights Reserved.</p>
 							</div>
 						</div>
 						<div class="col-lg-6 col-12">
